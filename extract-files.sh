@@ -73,6 +73,9 @@ function blob_fixup() {
         vendor/lib64/libril-qc-hal-qmi.so)
             sed -i 's|ro.product.vendor.device|ro.vendor.radio.midevice|g' "${2}"
             ;;
+        vendor/etc/dolby/dax-default.xml)
+            sed -i "/volume-leveler-enable/ s/true/false/g" "${2}"
+            ;;
     esac
 }
 
